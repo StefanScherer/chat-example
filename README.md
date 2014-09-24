@@ -25,6 +25,13 @@ Additionally you can spin up three boxes with Vagrant
 * client01 - a Windows 7 client with WireShark and Chrome Browser installed
 * client02 - another Windows 7 client for further tests
 
+Should work with VirtualBox. The VMware provider is not able to set the second network card automatically in the Windows guests.
+If you do not have the base boxes, please head over to Vagrant Cloud and update the `vm.box` names in the `Vagrantfile` as needed.
+
+```
+vagrant up --provider=virtualbox
+```
+
 ### server
 
 ```bash
@@ -36,10 +43,10 @@ node app.js
 
 ### client01
 
-* Open Chrome Browser with url http://172.16.32.2:3000
+* Open Chrome Browser with url http://192.168.33.2:3000
 * Open the same page with Internet Explorer 8
 ```cmd
-start http://172.16.32.2:3000
+start http://192.168.33.2:3000
 ```
 
 * Open WireShark for further investation.
