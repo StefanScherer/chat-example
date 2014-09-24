@@ -18,45 +18,59 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "client01" do |slave|
-    slave.vm.box = "windows_7_ultimate"
-    slave.vm.hostname = "client01"
+  config.vm.define "client01" do |client|
+    client.vm.box = "windows_7_ultimate"
+    client.vm.hostname = "client01"
 
-    slave.vm.communicator = "winrm"
-    slave.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
-    slave.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
-    slave.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
+    client.vm.communicator = "winrm"
+    client.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
+    client.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+    client.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
 
-    slave.vm.network :private_network, ip: "172.16.32.3" # VirtualBox
+    client.vm.network :private_network, ip: "172.16.32.3" # VirtualBox
 
-    slave.vm.provision "shell", path: "scripts/provision-client.bat"
-    slave.vm.provider "virtualbox" do |v|
+    client.vm.provision "shell", path: "scripts/provision-client.bat"
+    client.vm.provider "virtualbox" do |v|
       v.gui = true
       v.memory = 1024
       v.cpus = 1
       v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
       v.customize ["modifyvm", :id, "--vram", "32"]
     end
+    ["vmware_fusion", "vmware_workstation"].each do |provider|
+       client.vm.provider provider do |v, override|
+         v.gui = true
+         v.vmx["memsize"] = "1024"
+         v.vmx["numvcpus"] = "1"
+      end
+    end
   end
 
-  config.vm.define "client02" do |slave|
-    slave.vm.box = "windows_7_ultimate"
-    slave.vm.hostname = "client02"
+  config.vm.define "client02" do |client|
+    client.vm.box = "windows_7_ultimate"
+    client.vm.hostname = "client02"
 
-    slave.vm.communicator = "winrm"
-    slave.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
-    slave.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
-    slave.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
+    client.vm.communicator = "winrm"
+    client.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
+    client.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+    client.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
 
-    slave.vm.network :private_network, ip: "172.16.32.4" # VirtualBox
+    client.vm.network :private_network, ip: "172.16.32.4" # VirtualBox
 
-    slave.vm.provision "shell", path: "scripts/provision-client.bat"
-    slave.vm.provider "virtualbox" do |v|
+    client.vm.provision "shell", path: "scripts/provision-client.bat"
+    client.vm.provider "virtualbox" do |v|
       v.gui = true
       v.memory = 2048
       v.cpus = 2
       v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
       v.customize ["modifyvm", :id, "--vram", "32"]
+    end
+    ["vmware_fusion", "vmware_workstation"].each do |provider|
+       client.vm.provider provider do |v, override|
+         v.gui = true
+         v.vmx["memsize"] = "1024"
+         v.vmx["numvcpus"] = "1"
+      end
     end
   end
 
