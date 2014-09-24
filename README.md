@@ -36,3 +36,15 @@ node app.js
 
 ### client01
 
+* Open Chrome Browser with url http://172.16.32.2:3000
+* Open the same page with Internet Explorer 8
+```cmd
+start http://172.16.32.2:3000
+```
+
+* Open WireShark for further investation.
+
+### client02
+
+* Try the same things here.
+The second client box is to check whether messages are sent to both windows boxes or only to the box that is interested in messages.
