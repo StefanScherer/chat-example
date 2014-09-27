@@ -9,10 +9,10 @@ npm install
 node app.js
 ```
 
-Open two browsers on port 3000
+Open two browsers on port 8080
 
 ```bash
-open http://localhost:3000
+open http://localhost:8080
 ```
 
 And type something into the chat text box.
@@ -43,10 +43,10 @@ node app.js
 
 ### client01
 
-* Open Chrome Browser with url http://192.168.33.2:3000
+* Open Chrome Browser with url http://192.168.33.2:8080
 * Open the same page with Internet Explorer 8
 ```cmd
-start http://192.168.33.2:3000
+start http://192.168.33.2:8080
 ```
 
 * Open WireShark for further investation.
