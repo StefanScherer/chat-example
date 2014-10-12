@@ -21,6 +21,8 @@ And type something into the chat text box.
 ## Vagrant
 Additionally you can spin up three boxes with Vagrant
 
+![chat-example diagram](images/chat_example.png)
+
 * server - start the Node.js chat server here
 * client01 - a Windows 7 client with WireShark and Chrome Browser installed
 * client02 - another Windows 7 client for further tests
