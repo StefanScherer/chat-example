@@ -1,6 +1,11 @@
 # chat-example
 
 This is a simple [Node.js](http://nodejs.org) chat example based on [socket.io](http://socket.io).
+This uses Basic Auth for a small test where to retrieve the username in socket.io.
+
+The users are stored in `data/users.htpasswd`.
+
+Don't use this code in production as it has many security flaws!
 
 ## Chat server
 Start the chat server with
