@@ -1,6 +1,6 @@
 # chat-example
 
-This is a simple Node.js chat example based on socket.io.
+This is a simple [Node.js](http://nodejs.org) chat example based on [socket.io](http://socket.io).
 
 ## Chat server
 Start the chat server with
@@ -19,7 +19,7 @@ And type something into the chat text box.
 
 
 ## Vagrant
-Additionally you can spin up three boxes with Vagrant
+Additionally you can spin up three boxes with [Vagrant](http://vagrantup.com)
 
 ![chat-example diagram](images/chat_example.png)
 
@@ -28,7 +28,7 @@ Additionally you can spin up three boxes with Vagrant
 * client02 - another Windows 7 client for further tests
 
 Should work with VirtualBox. The VMware provider is not able to set the second network card automatically in the Windows guests.
-If you do not have the base boxes, please head over to Vagrant Cloud and update the `vm.box` names in the `Vagrantfile` as needed.
+If you do not have the base boxes, please head over to [Vagrant Cloud](http://vagrantcloud.com) and update the `vm.box` names in the `Vagrantfile` as needed.
 
 ```
 vagrant up --provider=virtualbox
