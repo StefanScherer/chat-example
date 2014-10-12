@@ -3,9 +3,9 @@
 This is a simple [Node.js](http://nodejs.org) chat example based on [socket.io](http://socket.io).
 This uses Basic Auth for a small test where to retrieve the username in socket.io.
 
-The users are stored in `data/users.htpasswd`.
+The users are stored in `data/users.htpasswd`. Look for user names ther
 
-Don't use this code in production as it has many security flaws!
+**Don't use this code in production as it has many security flaws!**
 
 ## Chat server
 Start the chat server with
@@ -20,8 +20,9 @@ Open two browsers on port 8080
 open http://localhost:8080
 ```
 
+Log in with one of the given user names in `data/users.htpasswd`.
 And type something into the chat text box.
-
+Open another browser and log in with another user. You can see the difference.
 
 ## Vagrant
 Additionally you can spin up three boxes with [Vagrant](http://vagrantup.com)
