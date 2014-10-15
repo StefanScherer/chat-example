@@ -1,0 +1,10 @@
+[
+  { "key": "pollingIntervalMilliseconds", "value": "3000"},
+  { "key": "pollingIntervalAfterErrorMilliseconds", "value": "15000"},
+  { "key": "mapUserNameRemoveCharsRegex", "value": "@.*"},
+  { "key": "urlPathPollForMessages", "value": "/socket.io/?EIO=3&transport=polling&b64=1"},
+  { "key": "mapUserNameToLower", "value": "1"},
+  { "key": "showOpenInfoclientButton", "value": "1"},
+  { "key": "showBookmark1Button", "value": "1"},
+  { "key": "urlPathBookmark1", "value": "/pin"}
+]

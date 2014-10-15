@@ -21,6 +21,13 @@ app.get('/', function(req, res) {
   res.sendFile('index.html', {'root': './'});
 });
 
+app.get('/infoclient-resteasy/rest/settings', function(req, res) {
+  // Store authenticated username in lookup map
+  logins[req.headers.authorization] = req.user;
+
+  res.sendFile('settings.json', {'root': './'});
+});
+
 io.on('connection', function(socket) {
   socket.broadcast.emit('hi');
   // Store username from Express lookup map
