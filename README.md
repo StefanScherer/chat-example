@@ -63,3 +63,26 @@ start http://192.168.33.2:8080
 
 * Try the same things here.
 The second client box is to check whether messages are sent to both windows boxes or only to the box that is interested in messages.
+
+# Prototype socket.io with HTTP Streaming
+
+This is a simple example to test HTTP streaming for the Infoclient Systray.
+Socket.IO itself does not have HTTP streaming, only WebSockets or Long Polling.
+Long polling uses a second HTTP connection to POST a request every 25 seconds from the client to the server.
+HTTP streaming only needs one connection.
+
+## Installation
+```
+npm install
+```
+
+## Test
+```
+npm start
+```
+
+The server listens on port 8081. Start a client to test Streaming
+```
+
+curl http://localhost:8081/messages/stream
+```

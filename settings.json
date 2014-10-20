@@ -1,10 +1,12 @@
 [
-  { "key": "pollingIntervalMilliseconds", "value": "3000"},
-  { "key": "pollingIntervalAfterErrorMilliseconds", "value": "15000"},
-  { "key": "mapUserNameRemoveCharsRegex", "value": "@.*"},
-  { "key": "urlPathPollForMessages", "value": "/socket.io/?EIO=3&transport=polling&b64=1"},
-  { "key": "mapUserNameToLower", "value": "1"},
-  { "key": "showOpenInfoclientButton", "value": "1"},
-  { "key": "showBookmark1Button", "value": "1"},
-  { "key": "urlPathBookmark1", "value": "/pin"}
+  { "key": "pollingIntervalMilliseconds", "value": "3000" },
+  { "key": "pollingIntervalAfterErrorMilliseconds", "value": "15000" },
+  { "key": "mapUserNameRemoveCharsRegex", "value": "@.*" },
+  { "key": "urlPathPollForMessages", "value": "/messages/stream/" },
+  { "key": "long-polling-urlPathPollForMessages", "value": "/socket.io/" },
+  { "key": "mapUserNameToLower", "value": "1" },
+  { "key": "showOpenInfoclientButton", "value": "0" },
+  { "key": "showBookmark1Button", "value": "0" },
+  { "key": "urlPathBookmark1", "value": "/pin" },
+  { "key": "forceUserName", "value": "1" }
 ]

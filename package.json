@@ -4,7 +4,7 @@
   "description": "my first socket.io app with basic auth",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Stefan Scherer",
@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "express": "4.9.7",
+    "http-auth": "2.2.0",
     "socket.io": "1.1.0",
-    "http-auth": "2.2.0"
+    "streamable": "0.6.0"
   }
 }
